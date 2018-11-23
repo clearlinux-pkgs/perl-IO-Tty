@@ -4,7 +4,7 @@
 #
 Name     : perl-IO-Tty
 Version  : 1.12
-Release  : 2
+Release  : 3
 URL      : https://cpan.metacpan.org/authors/id/T/TO/TODDR/IO-Tty-1.12.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/T/TO/TODDR/IO-Tty-1.12.tar.gz
 Summary  : 'Pseudo ttys and constants'
@@ -72,9 +72,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/IO/Pty.pm
-/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/IO/Tty.pm
-/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/IO/Tty/Constant.pm
+/usr/lib/perl5/vendor_perl/5.28.0/x86_64-linux-thread-multi/IO/Pty.pm
+/usr/lib/perl5/vendor_perl/5.28.0/x86_64-linux-thread-multi/IO/Tty.pm
+/usr/lib/perl5/vendor_perl/5.28.0/x86_64-linux-thread-multi/IO/Tty/Constant.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -84,4 +84,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/auto/IO/Tty/Tty.so
+/usr/lib/perl5/vendor_perl/5.28.0/x86_64-linux-thread-multi/auto/IO/Tty/Tty.so
