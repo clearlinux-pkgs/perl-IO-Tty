@@ -4,7 +4,7 @@
 #
 Name     : perl-IO-Tty
 Version  : 1.12
-Release  : 7
+Release  : 8
 URL      : https://cpan.metacpan.org/authors/id/T/TO/TODDR/IO-Tty-1.12.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/T/TO/TODDR/IO-Tty-1.12.tar.gz
 Summary  : 'Pseudo ttys and constants'
