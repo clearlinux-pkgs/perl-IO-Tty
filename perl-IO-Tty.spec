@@ -4,10 +4,10 @@
 #
 Name     : perl-IO-Tty
 Version  : 1.12
-Release  : 10
+Release  : 11
 URL      : https://cpan.metacpan.org/authors/id/T/TO/TODDR/IO-Tty-1.12.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/T/TO/TODDR/IO-Tty-1.12.tar.gz
-Summary  : 'Pseudo ttys and constants'
+Summary  : Provide an interface to TTYs and PTYs
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 Requires: perl-IO-Tty-lib = %{version}-%{release}
@@ -22,6 +22,7 @@ Summary: dev components for the perl-IO-Tty package.
 Group: Development
 Requires: perl-IO-Tty-lib = %{version}-%{release}
 Provides: perl-IO-Tty-devel = %{version}-%{release}
+Requires: perl-IO-Tty = %{version}-%{release}
 
 %description dev
 dev components for the perl-IO-Tty package.
