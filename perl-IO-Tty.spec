@@ -4,14 +4,15 @@
 #
 Name     : perl-IO-Tty
 Version  : 1.12
-Release  : 11
+Release  : 12
 URL      : https://cpan.metacpan.org/authors/id/T/TO/TODDR/IO-Tty-1.12.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/T/TO/TODDR/IO-Tty-1.12.tar.gz
-Summary  : Provide an interface to TTYs and PTYs
+Summary  : 'Pseudo ttys and constants'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-IO-Tty-lib = %{version}-%{release}
+Requires: perl-IO-Tty-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
+Patch1: 0001-Block-LTO-when-detecting-functions.patch
 
 %description
 IO::Tty and IO::Pty provide an interface to pseudo tty's
@@ -20,7 +21,6 @@ To build this distribution, run
 %package dev
 Summary: dev components for the perl-IO-Tty package.
 Group: Development
-Requires: perl-IO-Tty-lib = %{version}-%{release}
 Provides: perl-IO-Tty-devel = %{version}-%{release}
 Requires: perl-IO-Tty = %{version}-%{release}
 
@@ -28,22 +28,25 @@ Requires: perl-IO-Tty = %{version}-%{release}
 dev components for the perl-IO-Tty package.
 
 
-%package lib
-Summary: lib components for the perl-IO-Tty package.
-Group: Libraries
+%package perl
+Summary: perl components for the perl-IO-Tty package.
+Group: Default
+Requires: perl-IO-Tty = %{version}-%{release}
 
-%description lib
-lib components for the perl-IO-Tty package.
+%description perl
+perl components for the perl-IO-Tty package.
 
 
 %prep
 %setup -q -n IO-Tty-1.12
+cd %{_builddir}/IO-Tty-1.12
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -53,7 +56,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -73,9 +76,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/IO/Pty.pm
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/IO/Tty.pm
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/IO/Tty/Constant.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -83,6 +83,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/IO::Tty.3
 /usr/share/man/man3/IO::Tty::Constant.3
 
-%files lib
+%files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/auto/IO/Tty/Tty.so
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/IO/Pty.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/IO/Tty.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/IO/Tty/Constant.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/auto/IO/Tty/Tty.so
