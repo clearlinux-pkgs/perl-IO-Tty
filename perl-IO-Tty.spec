@@ -4,10 +4,10 @@
 #
 Name     : perl-IO-Tty
 Version  : 1.14
-Release  : 13
+Release  : 14
 URL      : https://cpan.metacpan.org/authors/id/T/TO/TODDR/IO-Tty-1.14.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/T/TO/TODDR/IO-Tty-1.14.tar.gz
-Summary  : Provide an interface to TTYs and PTYs
+Summary  : 'Pseudo ttys and constants'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 Requires: perl-IO-Tty-perl = %{version}-%{release}
@@ -21,7 +21,6 @@ Patch1: 0001-Block-LTO-when-detecting-functions.patch
 Summary: dev components for the perl-IO-Tty package.
 Group: Development
 Provides: perl-IO-Tty-devel = %{version}-%{release}
-Requires: perl-IO-Tty = %{version}-%{release}
 Requires: perl-IO-Tty = %{version}-%{release}
 
 %description dev
@@ -85,7 +84,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/IO/Pty.pm
-/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/IO/Tty.pm
-/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/IO/Tty/Constant.pm
-/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/auto/IO/Tty/Tty.so
+/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/IO/Pty.pm
+/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/IO/Tty.pm
+/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/IO/Tty/Constant.pm
+/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/auto/IO/Tty/Tty.so
