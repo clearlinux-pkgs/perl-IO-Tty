@@ -4,7 +4,7 @@
 #
 Name     : perl-IO-Tty
 Version  : 1.14
-Release  : 14
+Release  : 15
 URL      : https://cpan.metacpan.org/authors/id/T/TO/TODDR/IO-Tty-1.14.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/T/TO/TODDR/IO-Tty-1.14.tar.gz
 Summary  : 'Pseudo ttys and constants'
@@ -84,7 +84,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/IO/Pty.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/IO/Tty.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/IO/Tty/Constant.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/auto/IO/Tty/Tty.so
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/IO/Pty.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/IO/Tty.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/IO/Tty/Constant.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/auto/IO/Tty/Tty.so
